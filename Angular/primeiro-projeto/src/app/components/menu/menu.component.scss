@@ -1,0 +1,20 @@
+.menu {
+  position: relative;
+  display: block;
+}
+.menu ul {
+  list-style-type: none;
+}
+
+.menu ul li {
+  display: inline-block;
+  width: 40px;
+  margin: 0;
+  padding: 10px;
+  background-color: purple;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+}
