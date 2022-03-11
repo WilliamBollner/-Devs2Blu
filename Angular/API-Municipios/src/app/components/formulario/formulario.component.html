@@ -1,0 +1,57 @@
+<main class="container" style="min-height: 40%;">
+  <fieldset style="margin-left: 10%; margin-right: 10%; margin-top: 50px;">
+    <legend>Formulário API</legend>
+    <form>
+      <div class="form-group row" style="margin-top: 10px">
+        <div class="col-sm-10">
+          <select (change)="loadMunicipiosByUF($event)" name="uf" id="uf"
+            class="form-select col-sn-2-col"
+            style="margin-left: 100px; margin-top: 10px">
+            <option selected>Estados</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="11">MT</option>
+            <option value="12">MS</option>
+            <option value="13">MG</option>
+            <option value="14">PA</option>
+            <option value="15">PB</option>
+            <option value="16">PR</option>
+            <option value="17">PE</option>
+            <option value="PI">PI</option>
+            <option value="19">RJ</option>
+            <option value="20">RS</option>
+            <option value="21">RR</option>
+            <option value="22">RO</option>
+            <option value="SC">SC</option>
+            <option value="24">SP</option>
+            <option value="25">SE</option>
+            <option value="26">TO</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row" style="margin-top: 10px">
+        <div class="col-sm-10">
+          <select
+            class="form-select col-sn-2-col"
+            style="margin-left: 100px; margin-top: 10px;" name="cidade" id="cidade">
+
+            <option *ngFor="let cidade of cidades$ | async"value="{{cidade.id}}">{{cidade.nome}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row float-end" style="margin-top: 10px; margin-right: 80px; margin-bottom: 196px;">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </fieldset>
+</main>
