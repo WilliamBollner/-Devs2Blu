@@ -6,17 +6,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Turma {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String periodo;
 	private int maxAlunos;
+	
+	@OneToMany(mappedBy = "turma")
 	private List<Aluno> alunos;
+	
+	@OneToOne
+	@JoinColumn(name = "professor_id")
 	private Professor professor;
 	
 	public Turma() {}
@@ -59,9 +66,8 @@ public class Turma {
 
 	public void setAlunos(List<Aluno> alunos) {
 		if(alunos.size() <= getMaxAlunos()) {
-			this.alunos = alunos;
+			this.alunos = alunos;			
 		}
-		this.alunos = alunos;
 	}
 	
 	public void addAluno(Aluno aluno) {
@@ -79,5 +85,4 @@ public class Turma {
 	}
 	
 	
-
 }
