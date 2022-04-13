@@ -29,16 +29,17 @@ public class AlunoController {
 	PessoaRepository pessoaRepository;
 	
 	@GetMapping
-	public List<Aluno> getAll(){
+	public List<Aluno> getAll() {
 		return alunoRepository.findAll();
-	}	
+	}
 	
 	@PostMapping
-	public ResponseEntity<Aluno> addAluno(@RequestBody Aluno aluno){
+	public ResponseEntity<Aluno> addAluno(@RequestBody Aluno aluno) {
 		Pessoa pessoaAluno = pessoaRepository.save(aluno.getPessoa());
 		aluno.setPessoa(pessoaAluno);
-		//aluno.getPessoa().setId(pessoaAluno.getId());		
+		
 		Aluno alunoResponse = alunoRepository.save(aluno);
-		return new ResponseEntity<Aluno>(alunoResponse, HttpStatus.CREATED);		
+		
+		return new ResponseEntity<Aluno>(alunoResponse, HttpStatus.CREATED);
 	}
 }

@@ -16,17 +16,19 @@ public class Pessoa {
 	private String endereco;
 	private String sexo;
 	
+//	@OneToOne
+//	private Aluno aluno;
 	
 	
 	public Pessoa() {}
 
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

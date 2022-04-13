@@ -12,26 +12,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.projetosaula.springprojetoturmas.entity.Pessoa;
-import br.com.projetosaula.springprojetoturmas.repository.PessoaRepository;
+import br.com.projetosaula.springprojetoturmas.entity.Turma;
+import br.com.projetosaula.springprojetoturmas.repository.TurmaRepository;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/pessoa")
-public class PessoaController {
+@RequestMapping("/api/turma")
+public class TurmaController {
 	
 	@Autowired
-	PessoaRepository pessoaRepository;
-
+	TurmaRepository turmaRepository;
+	
 	@GetMapping
-	public List<Pessoa> getAll() {
-		return pessoaRepository.findAll();
+	public List<Turma> getAll() {
+		return turmaRepository.findAll();
 	}
 	
 	@PostMapping
-	public ResponseEntity<Pessoa> addPessoa(@RequestBody Pessoa pessoa) {
-		Pessoa pessoaResponse = pessoaRepository.save(pessoa);
+	public ResponseEntity<Turma> addTurma(@RequestBody Turma turma) {
+		Turma turmaResponse = turmaRepository.save(turma);
 		
-		return new ResponseEntity<Pessoa>(pessoaResponse, HttpStatus.CREATED);
+		return new ResponseEntity<Turma>(turmaResponse, HttpStatus.CREATED);
 	}
+
 }

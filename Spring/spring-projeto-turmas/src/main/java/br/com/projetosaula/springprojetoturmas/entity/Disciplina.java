@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Disciplina {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	@Column(unique = true)
 	private String nome;
 	
