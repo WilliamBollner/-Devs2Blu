@@ -1,0 +1,32 @@
+<table class="table table hover">
+  <thead>
+    <td>#</td>
+    <td>Nome</td>
+    <td>Ano</td>
+    <td>Actions</td>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let aluno of listAlunos$ | async">
+      <td>{{ aluno.id }}</td>
+      <td>{{ aluno.pessoa?.nome }}</td>
+      <td>{{ aluno.ano }}</td>
+      <td>
+        <div class="container-fluid">
+          <div class="col">
+            <a routerLink="/aluno" class="btn btn-sma btn-info">Ver</a>
+            <a
+              routerLink="/aluno-edit/{{ aluno.id }}"
+              class="btn btn-sma btn-warning"
+            >
+              Edit
+            </a>
+            <button (click)="delete(aluno.id)" class="btn btn-sma btn-danger">
+              Delete
+            </button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
