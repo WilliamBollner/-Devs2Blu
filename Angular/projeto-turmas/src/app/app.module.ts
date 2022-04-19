@@ -11,6 +11,7 @@ import { AlunoListComponent } from './components/aluno/aluno-list/aluno-list.com
 import { AlunoSaveComponent } from './components/aluno/aluno-save/aluno-save.component';
 import { ProfessorListComponent } from './components/professor/professor-list/professor-list.component';
 import { ProfessorSaveComponent } from './components/professor/professor-save/professor-save.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,13 @@ import { ProfessorSaveComponent } from './components/professor/professor-save/pr
     AlunoListComponent,
     AlunoSaveComponent,
     ProfessorListComponent,
-    ProfessorSaveComponent,
+    ProfessorSaveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

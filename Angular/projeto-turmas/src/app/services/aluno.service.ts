@@ -11,12 +11,17 @@ export class AlunoService {
 
   constructor(private http: HttpClient) { }
 
+  url = `${environment.urlApi}/aluno`;
+
   getListAlunos(){
-    let url:string = `${environment.urlApi}/aluno`;
-    return this.http.get<Aluno[]>(url);
+    return this.http.get<Aluno[]>(this.url);
   }
   getAlunosById(id : number){
-    let url:string = `${environment.urlApi}/aluno/${id}`;
-    return this.http.get<Aluno>(url);
+    return this.http.get<Aluno>(`${this.url}/${id}`);
+  }
+
+  addAluno(aluno: Aluno){
+    let url:string = `${environment.urlApi}/aluno`;
+    return this.http.post<Aluno>(url, aluno);
   }
 }
