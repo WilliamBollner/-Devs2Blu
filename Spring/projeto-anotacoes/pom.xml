@@ -12,7 +12,7 @@
 	<artifactId>projeto-anotacoes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>projeto-anotacoes</name>
-	<description>Projeto em Spring - Anotações</description>
+	<description>Projeto em Spring - Anotacoes</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
