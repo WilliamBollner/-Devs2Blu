@@ -21,9 +21,6 @@ export class AnotacaoService {
   }
 
   save(Nota: Nota) {
-    if(Nota.idNota && Nota.idNota > 0){
-      return this.update(Nota);
-    }
     return this.http.post<Nota>(this.urlApi, Nota);
   }
 
@@ -32,6 +29,6 @@ export class AnotacaoService {
   }
 
   delete(id: number) {
-    return this.http.delete<boolean>(`${this.urlApi}/${id}`);
+    return this.http.delete(`${this.urlApi}/${id}`);
   }
 }

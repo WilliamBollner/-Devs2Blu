@@ -15,7 +15,6 @@ export class AnotacoesAddComponent implements OnInit {
   @Input()
   status = new Subject<boolean>();
 
-  @Input()
   notaInsert = new Nota({categoria: new Categoria({})});
 
   categoriasList = new Observable<Categoria[]>();
