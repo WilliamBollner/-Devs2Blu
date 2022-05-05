@@ -11,6 +11,8 @@ import { CategoriaListComponent } from './components/categoria/categoria-list/ca
 import { CategoriaAddComponent } from './components/categoria/categoria-add/categoria-add.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AnotacoesModalSaveComponent } from './components/anotacoes/anotacoes-modal-save/anotacoes-modal-save.component';
+import { AnotacoesModalDeleteComponent } from './components/anotacoes/anotacoes-modal-delete/anotacoes-modal-delete.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     AnotacoesListComponent,
     AnotacoesAddComponent,
     CategoriaListComponent,
-    CategoriaAddComponent
+    CategoriaAddComponent,
+    AnotacoesModalSaveComponent,
+    AnotacoesModalDeleteComponent
   ],
   imports: [
     BrowserModule,

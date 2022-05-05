@@ -7,6 +7,9 @@
             [(ngModel)]="notaInsert.tituloNota"
             placeholder="Some title..."
             class="form-control">
+            <span *ngIf="notaInsert.idNota" id="id-hidden">
+              <input type="hidden" name="idNota" [(ngModel)]="notaInsert.idNota">
+            </span>
     </h5>
     <h6 class="card-subtitle mb-2 text-muted">
       <select name="categoria"
